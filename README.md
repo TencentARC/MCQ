@@ -46,7 +46,7 @@ video dataset WebVid-2M using 1 frame, and then on the video dataset WebVid-2M u
 4. You can use the above evaluation to select the best model during pre-training. 
 
 ## License
-MCQ is released under Apache License Version 2.0.
+
 
 ## Acknowledgement
 Our code is based on the implementation of "Frozen in Time: A Joint Video and Image Encoder for End-to-End Retrieval" <https://github.com/m-bain/frozen-in-time.git>.
