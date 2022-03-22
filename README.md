@@ -31,9 +31,9 @@
 
 5. We adopt the curriculum learning to train the model, which pre-trains the model on the image dataset CC3M and
 video dataset WebVid-2M using 1 frame, and then on the video dataset WebVid-2M using 4 frames.
-    - Run "bash sctripts/train_1frame_mask_noun.sh" and get the best model (model*).
-    - Run "bash sctripts/train_4frame_mask_noun.sh" with model* loaded in "configs/dist-4frame-mask-noun.json", and get the best model (model**).
-    - Run "bash sctripts/train_4frame_mask_verb.sh" with model** loaded in "configs/dist-4frame-mask-verb.json", and get the best model (model***).
+    - Run "bash sctripts/train_1frame_mask_noun.sh" and get model*.
+    - Run "bash sctripts/train_4frame_mask_noun.sh" with model* loaded in "configs/dist-4frame-mask-noun.json", and get model**.
+    - Run "bash sctripts/train_4frame_mask_verb.sh" with model** loaded in "configs/dist-4frame-mask-verb.json", and get model***.
 6. Our repo adopts Multi-Machine and Muiti-GPU training, with 32 A100 GPU for 1-frame pre-training and 40 A100 GPU for 4-frame pre-training.
 
 ## Downstream Retrieval (Zero-shot on MSR-VTT)
@@ -42,8 +42,6 @@ video dataset WebVid-2M using 1 frame, and then on the video dataset WebVid-2M u
 2. Load the model in  "configs/zero_msrvtt_4f_i21k.json".
 
 3. Run "bash sctripts/test_retrieval.sh".
-
-4. You can use the above evaluation to select the best model during pre-training. 
 
 ## License
 
