@@ -1,0 +1,101 @@
+{
+    "name": "1frame-mask-noun",
+    "n_gpu": 8,
+    "arch": {
+        "type": "MCQ",
+        "args": {
+            "video_params": {
+                "model": "Video_Bridge_Former",
+                "arch_config": "base_patch16_224",
+                "num_frames": 1,
+                "pretrained": true
+            },
+            "text_params": {
+                "model": "distilbert-base-uncased",
+                "pretrained": true,
+                "input": "text"
+            },
+            "projection": "minimal",
+            "load_checkpoint" : ""
+        }
+    },
+    "data_loader":
+            [
+                {
+                    "type": "MultiDistTextVideoDataLoader",
+                    "args":{
+                        "dataset_name": "ConceptualCaptions3M",
+                        "data_dir": "data/CC3M/",
+                        "reader": "cv2",
+                        "question": "noun",
+                        "shuffle": true,
+                        "num_workers": 6,
+                        "batch_size": 64,
+                        "split": "train",
+                        "subsample": 1,
+                        "text_params": {
+                            "input": "text"
+                        },
+                        "video_params": {
+                            "input_res": 224,
+                            "num_frames": 1,
+                            "loading": "lax"
+                        }
+                    }
+                },
+                {
+                    "type": "MultiDistTextVideoDataLoader",
+                    "args":{
+                        "dataset_name": "WebVid",
+                        "data_dir": "data/WebVid/",
+                        "reader": "cv2",
+                        "question": "noun",
+                        "shuffle": true,
+                        "num_workers": 6,
+                        "batch_size": 64,
+                        "split": "train",
+                        "cut": "2M",
+                        "subsample": 1,
+                        "text_params": {
+                            "input": "text"
+                        },
+                        "video_params": {
+                            "input_res": 224,
+                            "num_frames": 1,
+                            "loading": "lax"
+                        }
+                    }
+                }
+            ],
+    "optimizer": {
+        "type": "AdamW",
+        "args":{
+            "lr": 1e-4
+        }
+    },
+    "loss": {
+        "type": "NormSoftmaxLoss",
+        "args": {
+        }
+    },
+    "metrics": [
+        "t2v_metrics",
+        "v2t_metrics"
+     ],
+    "trainer": {
+        "epochs": 20,
+        "schedule": [12, 16],
+        "max_samples_per_epoch": 1000000,
+        "save_dir": "./results/1frame-mask-noun",
+        "save_period": 1,
+        "verbosity": 2,
+        "monitor": "min val_loss_0",
+        "early_stop": 10,
+        "init_val": false,
+        "neptune": false
+    },
+    "visualizer": {
+        "type": ""
+    }
+
+}
