@@ -4,9 +4,9 @@
 ![image](https://github.com/TencentARC/MCQ/blob/main/demo/MCQ.jpg?raw=true)
 
 ## News
-2022-04-17 We release the pre-trained model initialized from CLIP (ViT-B/32) and its usage.
+**2022-04-17** We release the pre-trained model initialized from CLIP (ViT-B/32) and its usage (text-to-video retrieval and video feature extraction).
 
-2022-04-08 We release the pre-training and downstream evaluation code, and the pre-trained model.
+**2022-04-08** We release the pre-training and downstream evaluation code, and the pre-trained model.
 
 ## Main Results on Downstream Tasks
 ### Text-to-video Retrieval on MSR-VTT
@@ -88,13 +88,19 @@ To evaluate the performance of the CLIP-initialized pre-trained model,
      ```
     bash sctripts/test_retrieval_CLIP.sh
     ```
+    
+We also provide a script to extract video features of any given videos from the CLIP-initialized pre-trained model,
+  ```
+  python extract_video_features_clip.py
+  ```
+
 
 ## To Do
 - [x] Release pre-training code
 - [x] Release pre-trained model
 - [x] Release downstream evaluation code 
 - [x] Release CLIP-initialized  model
-- [ ] Release video representation extraction code
+- [x] Release video representation extraction code
 
 ## License
 MCQ is released under BSD 3-Clause License.
