@@ -1,7 +1,12 @@
 # Bridging Video-text Retrieval with Multiple Choice Questions, CVPR 2022 (Oral)
 
-[Paper](https://arxiv.org/pdf/2201.04850.pdf) | [Project Page](https://geyuying.github.io/MCQ.html) | [Pre-trained Model](https://drive.google.com/file/d/1SojMkCprqaciA56wpm1jt_jJIdYM5vLP/view?usp=sharing) 
+[Paper](https://arxiv.org/pdf/2201.04850.pdf) | [Project Page](https://geyuying.github.io/MCQ.html) | [Pre-trained Model](https://drive.google.com/file/d/1SojMkCprqaciA56wpm1jt_jJIdYM5vLP/view?usp=sharing) | [Pre-trained Model from CLIP](https://drive.google.com/file/d/10ryRLuT4Mjg1fEzrSrL8G36tt0IklbN2/view?usp=sharing) 
 ![image](https://github.com/TencentARC/MCQ/blob/main/demo/MCQ.jpg?raw=true)
+
+## News
+2022-04-17 We release the pre-trained model initialized from CLIP (ViT-B/32).
+
+2022-04-08 We release the pre-training and downstream evaluation code, and the pre-trained model.
 
 ## Main Results on Downstream Tasks
 ### Text-to-video Retrieval on MSR-VTT
