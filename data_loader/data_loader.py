@@ -102,3 +102,31 @@ class TextVideoDataLoader(BaseDataLoaderExplicitSplit):
 
         super().__init__(dataset, batch_size, shuffle, num_workers)
         self.dataset_name = dataset_name
+       
+      
+class TextVideoDataLoader_CLIP(BaseDataLoaderExplicitSplit):
+    def __init__(self,
+                 dataset_name,
+                 text_params,
+                 video_params,
+                 data_dir,
+                 question,
+                 metadata_dir=None,
+                 split='train',
+                 tsfm_params=None,
+                 cut=None,
+                 subsample=1,
+                 sliding_window_stride=-1,
+                 reader='cv2',
+                 batch_size=1,
+                 num_workers=1,
+                 shuffle=True):
+        if tsfm_params is None:
+            tsfm_params = {}
+        tsfm_dict = init_transform_dict_clip(**tsfm_params)
+        tsfm = tsfm_dict[split]
+        dataset = dataset_loader(dataset_name, text_params, video_params, data_dir, question, metadata_dir, split, tsfm, cut,
+                                 subsample, sliding_window_stride, reader)
+
+        super().__init__(dataset, batch_size, shuffle, num_workers)
+        self.dataset_name = dataset_name
