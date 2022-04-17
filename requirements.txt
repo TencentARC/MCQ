@@ -8,3 +8,4 @@ pip install dominate
 pip install sacred
 pip install neptune-contrib
 pip install opencv-python
+pip install ftfy
