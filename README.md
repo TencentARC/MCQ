@@ -1,10 +1,10 @@
 # Bridging Video-text Retrieval with Multiple Choice Questions, CVPR 2022 (Oral)
 
-[Paper](https://arxiv.org/pdf/2201.04850.pdf) | [Project Page](https://geyuying.github.io/MCQ.html) | [Pre-trained Model](https://drive.google.com/file/d/1SojMkCprqaciA56wpm1jt_jJIdYM5vLP/view?usp=sharing) | [Pre-trained Model from CLIP](https://drive.google.com/file/d/10ryRLuT4Mjg1fEzrSrL8G36tt0IklbN2/view?usp=sharing) 
+[Paper](https://arxiv.org/pdf/2201.04850.pdf) | [Project Page](https://geyuying.github.io/MCQ.html) | [Pre-trained Model](https://drive.google.com/file/d/1SojMkCprqaciA56wpm1jt_jJIdYM5vLP/view?usp=sharing) | [CLIP-Initialized Pre-trained Model](https://drive.google.com/file/d/10ryRLuT4Mjg1fEzrSrL8G36tt0IklbN2/view?usp=sharing) 
 ![image](https://github.com/TencentARC/MCQ/blob/main/demo/MCQ.jpg?raw=true)
 
 ## News
-2022-04-17 We release the pre-trained model initialized from CLIP (ViT-B/32).
+2022-04-17 We release the pre-trained model initialized from CLIP (ViT-B/32) and its usage.
 
 2022-04-08 We release the pre-training and downstream evaluation code, and the pre-trained model.
 
@@ -78,12 +78,22 @@ Our pre-trained model can be downloaded in [Pre-trained Model](https://drive.goo
      ```
     bash sctripts/test_retrieval.sh
     ```
-    
+## CLIP-initialized Pre-trained Model
+We also initialize our model from CLIP weights to pre-train a model with MCQ. Specifically, we use the pre-trained CLIP (ViT-B/32) as the backbone of VideoFormer and TextFormer, and randomly initialize BridgeFormer. Our VideoFormer does not incur any additional parameters compared to the ViT of CLIP, with a parameter-free modification to allow for the input of video frames with variable length. 
+
+To evaluate the performance of the CLIP-initialized pre-trained model,
+ 1. Download the model in [CLIP-Initialized Pre-trained Model](https://drive.google.com/file/d/10ryRLuT4Mjg1fEzrSrL8G36tt0IklbN2/view?usp=sharing). 
+ 
+ 2. Load the pre-trained model in  "configs/zero_msrvtt_4f_i21k_clip.json".
+     ```
+    bash sctripts/test_retrieval_CLIP.sh
+    ```
+
 ## To Do
 - [x] Release pre-training code
 - [x] Release pre-trained model
 - [x] Release downstream evaluation code 
-- [ ] Release CLIP-initialized  model
+- [x] Release CLIP-initialized  model
 - [ ] Release video representation extraction code
 
 ## License
