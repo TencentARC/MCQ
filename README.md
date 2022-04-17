@@ -81,7 +81,7 @@ Our pre-trained model can be downloaded in [Pre-trained Model](https://drive.goo
 ## CLIP-initialized Pre-trained Model
 We also initialize our model from CLIP weights to pre-train a model with MCQ. Specifically, we use the pre-trained CLIP (ViT-B/32) as the backbone of VideoFormer and TextFormer, and randomly initialize BridgeFormer. Our VideoFormer does not incur any additional parameters compared to the ViT of CLIP, with a parameter-free modification to allow for the input of video frames with variable length. 
 
-To evaluate the performance of the CLIP-initialized pre-trained model,
+To evaluate the performance of the CLIP-initialized pre-trained model on text-to-video retrieval,
  1. Download the model in [CLIP-Initialized Pre-trained Model](https://drive.google.com/file/d/10ryRLuT4Mjg1fEzrSrL8G36tt0IklbN2/view?usp=sharing). 
  
  2. Load the pre-trained model in  "configs/zero_msrvtt_4f_i21k_clip.json".
