@@ -14,6 +14,7 @@ We train models on these raw videos directly, instead of using off-line extracte
 ## Download Captions with Extracted Noun and Verb Phrases for Pre-training
 1. Download the captions of WebVid-2M and CC3M with the extracted noun and verb phrases in [meta_data](https://drive.google.com/drive/folders/1thdilupXvb14B6QOTm_AGwuSjQh3Kfkh?usp=sharing), and put them under the folder "meta_data".
 
+**If you want to extract the noun and verb phrases on your own dataset, please refer to https://github.com/TencentARC/MCQ/issues/3.**
 ## Download Downstream Datasets
 1. Download MSR-VTT "wget https://www.robots.ox.ac.uk/~maxbain/frozen-in-time/data/MSRVTT.zip -P data; unzip data/MSRVTT.zip -d data".
 
