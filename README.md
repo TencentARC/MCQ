@@ -12,7 +12,7 @@
 ### Text-to-video Retrieval on MSR-VTT
 ![image](https://github.com/TencentARC/MCQ/blob/main/demo/msrvtt.jpg?raw=true)
 ### Text-to-video Retrieval on MSVD, LSMDC and DiDeMo
-![image](https://github.com/TencentARC/MCQ/blob/main/demo/msvd.jpg?raw=true)
+![image](https://github.com/TencentARC/MCQ/blob/main/demo/msvd.png?raw=true)
 
 ## Visualization
 ### Answer Noun Questions
