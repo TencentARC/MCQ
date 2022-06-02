@@ -23,6 +23,12 @@ We visualize the cross-modality alignment between text and video tokens by calcu
 
 ## Pre-trained Model
 Our pre-trained model can be downloaded in [Pre-trained Model](https://connecthkuhk-my.sharepoint.com/:u:/g/personal/yuyingge_connect_hku_hk/EewsJ8SvaetNjHBnaopKelkBpIhyARHKoHAFkHm9uAZhGA?e=K6XXEI), which contains the weights of Video Encoder and Text Encoder.
+
+
+## Video Encoder
+Our video encoder is exactly the same as [Frozen](https://arxiv.org/abs/2104.00650), which consists of a stack of [divided space-time self-attention blocks](https://arxiv.org/abs/2102.05095). Compared to the video encoder of MCQ, the video encoder of MILES adds temporal attention to enable reasoning among the visible regions along the temporal dimensions for masked video modeling.
+
+
 ## Downstream Retrieval (Zero-shot on MSR-VTT)
  1. Download our pre-trained model in [Pre-trained Model](https://connecthkuhk-my.sharepoint.com/:u:/g/personal/yuyingge_connect_hku_hk/EewsJ8SvaetNjHBnaopKelkBpIhyARHKoHAFkHm9uAZhGA?e=K6XXEI).
  
