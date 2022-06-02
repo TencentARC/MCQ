@@ -4,6 +4,8 @@
 ![image](https://github.com/TencentARC/MCQ/blob/main/demo/MCQ.jpg?raw=true)
 
 ## News
+**2022-06-02** We release the pre-trained model of our method **Masked visual modeling with Injected LanguagE Semantics (MILES)** (see [`MILES.md`](MILES.md)）
+
 **2022-04-17** We release the pre-trained model initialized from CLIP (ViT-B/32) and its usage (text-to-video retrieval and video feature extraction).
 
 **2022-04-08** We release the pre-training and downstream evaluation code, and the pre-trained model.
