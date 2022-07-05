@@ -1,4 +1,4 @@
-# MILES: Visual BERT Pre-training with Injected Language Semantics for Video-text Retrieval
+# MILES: Visual BERT Pre-training with Injected Language Semantics for Video-text Retrieval (ECCV 2022)
 
 [Paper](https://arxiv.org/abs/2204.12408) | [Pre-trained Model](https://connecthkuhk-my.sharepoint.com/:u:/g/personal/yuyingge_connect_hku_hk/EewsJ8SvaetNjHBnaopKelkBpIhyARHKoHAFkHm9uAZhGA?e=K6XXEI)
 ![image](https://github.com/TencentARC/MCQ/blob/main/demo/MILES/MILES.jpg?raw=true)
