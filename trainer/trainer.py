@@ -232,7 +232,7 @@ class Trainer_MCQ(Multi_BaseTrainer_dist):
                 nested_metrics[dl_idx][metric_name] = res_vt
 
                 if self.writer is not None and self.args.rank == 0:
-                    to_write = format_nested_metrics_for_writer(res, mode=metric_name,
+                    to_write = format_nested_metrics_for_writer(res_vt, mode=metric_name,
                                                                 name=self.valid_data_loader[dl_idx].dataset_name)
                     for key, val in to_write.items():
                         self.writer.log_scalar(key, val)
