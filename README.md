@@ -55,16 +55,16 @@ We adopt the curriculum learning to train the model, which pre-trains the model 
 
 1. For 1-frame pre-training, since a single frame does not contain temporal dynamics to correspond to verb phrases, we train the model to answer only noun questions. 
     ```
-    bash sctripts/train_1frame_mask_noun.sh
+    bash scripts/train_1frame_mask_noun.sh
     ```
     When the training loss converges, we get model "MCQ_1frame.pth".
 3. For 4-frame pre-training, to save computation cost to enable a comparatively large batch size for contrastive learning, we train the model to anwer noun and verb questions sequentially. We first train the model to answer noun questions with "MCQ_1frame.pth" loaded in "configs/dist-4frame-mask-noun.json".
      ```
-    bash sctripts/train_4frame_mask_noun.sh
+    bash scripts/train_4frame_mask_noun.sh
     ```
     When the training loss converges, we get model "MCQ_4frame_noun.pth". We then train the model to answer verb questions with "MCQ_4frame_noun.pth" loaded in "configs/dist-4frame-mask-verb.json".
      ```
-    bash sctripts/train_4frame_mask_verb.sh
+    bash scripts/train_4frame_mask_verb.sh
     ```
     When the training loss converges, we get the final model.
 
@@ -88,7 +88,7 @@ To evaluate the performance of the CLIP-initialized pre-trained model on text-to
  
  2. Load the pre-trained model in  "configs/zero_msrvtt_4f_i21k_clip.json".
      ```
-    bash sctripts/test_retrieval_CLIP.sh
+    bash scripts/test_retrieval_CLIP.sh
     ```
     
 We also provide a script to extract video features of any given videos from the CLIP-initialized pre-trained model,
